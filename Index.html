@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+        var windowWidth
+        var windowHeight
+
+        var currentPosLeft
+        var currentPosTop
+        $(document).ready(function(){
+            windowWidth = $( window ).width();
+            windowHeight = $( window ).height();
+
+            currentPosLeft =  parseInt($("#moving-block").css('left'));
+            currentPosTop =  parseInt($("#moving-block").css('top'));
+
+            console.log(windowWidth + "this is window width")
+            console.log(windowHeight + "this is window height")
+
+            console.log(currentPosLeft + "this is Div left")
+            console.log(currentPosTop + "this is Div top")
+        });
+
+        document.onkeydown = function(e) {
+            switch (e.keyCode) {
+                case 37:
+                    moveLeft();
+                    break;
+                case 38:
+                    moveLeft();
+                    break;
+                case 39:
+                    moveRight();
+                    break;
+                case 40:
+                    alert('down');
+                    break;
+            }
+        };
+
+        function moveLeft()
+        {
+/*            if (currentPosLeft > windowWidth)
+            {
+                currentPosLeft = windowWidth
+            }
+            else
+            {
+           //     currentPosLeft = currentPosLeft + 30 + "px"
+           //     $("#moving-block").css("left",currentPosLeft)
+            }*/
+        }
+        function moveRight()
+        {
+
+            if (currentPosLeft > windowWidth)
+             {
+                 currentPosLeft = windowWidth
+             }
+             else
+             {
+                  currentPosLeft = currentPosLeft + 30
+                  $("#moving-block").css("left",currentPosLeft + "px")
+             }
+        }
+        function moveUp()
+        {
+    //        $("#moving-block").css("left","100px")
+        }
+        function moveDown()
+        {
+      //      $("#moving-block").css("left","100px")
+        }
+
+
+    </script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+</head>
+<body>
+<p>If you click on me, I will disappear.</p>
+<button>Move left</button>
+<h1>Here all starts</h1>
+    <div id="moving-block">
+    </div>
+
+</body>
+
+</html>
