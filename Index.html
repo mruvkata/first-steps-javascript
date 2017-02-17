@@ -16,10 +16,7 @@
 
             currentPosLeft =  parseInt($("#moving-block").css('left'));
             currentPosTop =  parseInt($("#moving-block").css('top'));
-//this is some change to the file
-           //this is some change to the file2
 
-            
             console.log(windowWidth + "this is window width")
             console.log(windowHeight + "this is window height")
 
@@ -33,53 +30,89 @@
                     moveLeft();
                     break;
                 case 38:
-                    moveLeft();
+                    moveUp();
                     break;
                 case 39:
                     moveRight();
                     break;
                 case 40:
-                    alert('down');
+                    moveDown();
                     break;
             }
         };
 
         function moveLeft()
         {
-/*            if (currentPosLeft > windowWidth)
-            {
-                currentPosLeft = windowWidth
-            }
-            else
-            {
-           //     currentPosLeft = currentPosLeft + 30 + "px"
-           //     $("#moving-block").css("left",currentPosLeft)
-            }*/
+            currentPosLeft = currentPosLeft - 30
+            if (currentPosLeft <= 0)
+             {
+                 currentPosLeft = 0
+				 $("#moving-block").css("left",currentPosLeft + "px")
+             }
+             else
+             {                  
+                  $("#moving-block").css("left",currentPosLeft + "px")
+             }
         }
         function moveRight()
         {
-
-            if (currentPosLeft > windowWidth)
+            currentPosLeft = currentPosLeft + 30
+            if (currentPosLeft >= windowWidth - 101)
              {
-                 currentPosLeft = windowWidth
+                 currentPosLeft = windowWidth- 101
+				 $("#moving-block").css("left",currentPosLeft + "px")
              }
              else
              {
-                  currentPosLeft = currentPosLeft + 30
+                  //$("#moving-block").animate({left: currentPosLeft + "px"} )                  
                   $("#moving-block").css("left",currentPosLeft + "px")
              }
         }
         function moveUp()
         {
-    //        $("#moving-block").css("left","100px")
+            currentPosTop = currentPosTop - 30
+            if (currentPosTop <= 0)
+             {
+                 currentPosTop = 0
+				 $("#moving-block").css("top",currentPosTop + "px")
+             }
+             else
+             {                  
+                  $("#moving-block").css("top",currentPosTop + "px")
+             }
         }
         function moveDown()
         {
-      //      $("#moving-block").css("left","100px")
+            currentPosTop = currentPosTop + 30
+            if (currentPosTop >= windowHeight-71)
+             {
+                 currentPosTop = windowHeight-71
+				 $("#moving-block").css("top",currentPosTop + "px")
+             }
+             else
+             {                  
+                  $("#moving-block").css("top",currentPosTop + "px")
+             }
         }
 
 
     </script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#test1").text(function(dddd, origText){
+                    return "Old text: " + origText + " New text: Hello world! (index: " + dddd + ")"; 
+                });
+            });
+
+            $("#btn2").click(function(){
+                $("#test2").html(function()
+                    {
+                    return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")"; 
+                });
+            });
+        });
+        </script>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
 </head>
@@ -90,6 +123,15 @@
     <div id="moving-block">
     </div>
 
+    <p id="test1">This is a <b>bold</b> paragraph.</p>
+    <p id="test2">This is another <b>bold</b> paragraph.</p>
+
+    
+    <div class="tiles"></div><div class="tiles"></div><div class="tiles"></div>
+    <div class="tiles"></div><div class="tiles"></div><div class="tiles"></div>
+    <div class="tiles"></div><div class="tiles"></div><div class="tiles"></div>
+    <button id="clear-board">Claer</button>
+    
 </body>
 
 </html>
