@@ -7,3 +7,65 @@
     width: 100px;
     background: darkred;
 }
+
+#moving-block {
+    position: absolute;
+    border: solid;
+    height: 50px;
+    width: 50px;
+    left: 50px;
+    top: 50px;
+    background: darkred;
+}
+.lines
+{
+    position: relative;
+
+
+}
+.cell {
+    position: absolute;
+    float: right;
+    border: solid;
+    height: 50px;
+    width: 50px;
+}
+
+td {
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+}
+/*
+* {
+    margin: 10;
+    padding: 10;
+}
+*/
+table {
+    border-collapse:separate;
+    border-spacing: 5px;
+}
+
+#board {
+    padding: 0px;
+    margin: 50px;
+    margin-top: 50px;
+}
+
+#board tr td {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #1c1c1c;
+    font-family: Helvetica;
+    font-size: 30px;
+    text-align: center;
+    margin: 15px;
+    margin-left: 15px;
+    padding: 15px;
+}
+
+#board tr td:hover {
+    background: #e4e4e4;
+    cursor: pointer;
+}
